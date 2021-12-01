@@ -1,3 +1,7 @@
+package BankProductsModel;
+
+import enums.CurrencyTypes;
+
 public abstract class BankProductsAbst implements BankProducts {
 
     private CurrencyTypes currency;
@@ -12,8 +16,8 @@ public abstract class BankProductsAbst implements BankProducts {
     }
 
 
-    public void replenish(Double amount){
-        setBalance(getBalance()+amount);
+    public void replenish(Double amount) {
+        setBalance(getBalance() + amount);
     }
 
     public CurrencyTypes getCurrency() {

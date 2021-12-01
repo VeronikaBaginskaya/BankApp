@@ -1,3 +1,5 @@
+package enums;
+
 public enum ProductName {
     CREDIT_CARD,
     DEBIT_CARD,

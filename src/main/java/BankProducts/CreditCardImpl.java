@@ -1,4 +1,7 @@
-import java.math.BigInteger;
+package BankProducts;
+
+import BankProductsModel.BankProductsAbst;
+import enums.CurrencyTypes;
 
 public class CreditCardImpl extends BankProductsAbst implements CreditCard {
 
@@ -8,12 +11,16 @@ public class CreditCardImpl extends BankProductsAbst implements CreditCard {
 
     public CreditCardImpl(CurrencyTypes currency, Double balance, String name, Double interestRate, Double indebtedness) {
         super(currency, balance, name);
-        this.interestRate=interestRate;
+        this.interestRate = interestRate;
         this.indebtedness = indebtedness;
     }
 
     public Double getIndebtedness() {
         return indebtedness;
+    }
+
+    public void setIndebtedness(Double indebtedness) {
+        this.indebtedness = indebtedness;
     }
 
 
@@ -27,7 +34,7 @@ public class CreditCardImpl extends BankProductsAbst implements CreditCard {
 
 
     public void writeOff(Double amount, BankProductsAbst bankProductsAbst) {
-        bankProductsAbst.setBalance(bankProductsAbst.getBalance()-amount);
+        bankProductsAbst.setBalance(bankProductsAbst.getBalance() - amount);
 
     }
 }

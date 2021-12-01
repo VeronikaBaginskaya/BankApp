@@ -1,3 +1,10 @@
+package Clients;
+
+import BankProducts.Cards;
+import BankProducts.CreditCard;
+import BankProducts.Investments;
+import BankProductsModel.BankProductsAbst;
+
 public class Client {
 
     private String fullName;
@@ -11,7 +18,7 @@ public class Client {
         this.fullName = fullName;
     }
 
-    int getId() {
+    public int getId() {
         return id;
     }
 

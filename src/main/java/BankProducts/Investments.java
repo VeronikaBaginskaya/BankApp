@@ -1,4 +1,6 @@
-import java.math.BigInteger;
+package BankProducts;
+
+import BankProductsModel.BankProducts;
 
 public interface Investments extends BankProducts {
 

@@ -1,4 +1,9 @@
-import java.math.BigInteger;
+package BankProducts;
+
+import BankProductsModel.BankProductsAbst;
+import DataBase.DataBase;
+import enums.CurrencyTypes;
+
 import java.util.Map;
 
 public class InvestmentsImpl extends BankProductsAbst implements Investments {

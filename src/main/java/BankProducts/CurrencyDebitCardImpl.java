@@ -1,3 +1,8 @@
+package BankProducts;
+
+import BankProductsModel.BankProductsAbst;
+import enums.CurrencyTypes;
+
 public class CurrencyDebitCardImpl extends BankProductsAbst implements Cards {
 
     public CurrencyDebitCardImpl(CurrencyTypes currency, Double balance, String name) {
@@ -6,8 +11,8 @@ public class CurrencyDebitCardImpl extends BankProductsAbst implements Cards {
 
     @Override
     public void writeOff(Double amount, BankProductsAbst bankProductsAbst) {
-        Double balance = bankProductsAbst.getBalance()-amount;
-        if (balance>=0)
+        Double balance = bankProductsAbst.getBalance() - amount;
+        if (balance >= 0)
             bankProductsAbst.setBalance(balance);
         else System.out.println("запрещено списывать в минус на валютной дебетовой карте!");
     }
