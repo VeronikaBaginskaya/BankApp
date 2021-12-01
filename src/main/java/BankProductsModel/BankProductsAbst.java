@@ -1,7 +1,6 @@
 package BankProductsModel;
 
 import enums.CurrencyTypes;
-
 public abstract class BankProductsAbst implements BankProducts {
 
     private CurrencyTypes currency;
