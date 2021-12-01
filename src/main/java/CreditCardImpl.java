@@ -3,19 +3,17 @@ import java.math.BigInteger;
 public class CreditCardImpl extends BankProductsAbst implements CreditCard {
 
     private Double interestRate;
+    private Double indebtedness;
 
 
-    public CreditCardImpl(String currency, Double balance, String name, Double interestRate) {
+    public CreditCardImpl(CurrencyTypes currency, Double balance, String name, Double interestRate, Double indebtedness) {
         super(currency, balance, name);
         this.interestRate=interestRate;
+        this.indebtedness = indebtedness;
     }
 
-    public void write_off(Double amount) {
-
-    }
-
-    public Double getIndebtedness(BigInteger cardAccountNumber) {
-        return null;
+    public Double getIndebtedness() {
+        return indebtedness;
     }
 
 
@@ -28,4 +26,8 @@ public class CreditCardImpl extends BankProductsAbst implements CreditCard {
     }
 
 
+    public void writeOff(Double amount, BankProductsAbst bankProductsAbst) {
+        bankProductsAbst.setBalance(bankProductsAbst.getBalance()-amount);
+
+    }
 }

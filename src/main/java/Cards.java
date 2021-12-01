@@ -1,6 +1,6 @@
 public interface Cards extends BankProducts {
 
-    void write_off(Double amount);
+    void writeOff(Double amount, BankProductsAbst bankProductsAbst);
 
 
 }

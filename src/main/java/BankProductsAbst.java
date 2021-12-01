@@ -1,11 +1,11 @@
 public abstract class BankProductsAbst implements BankProducts {
 
-    private String currency;
+    private CurrencyTypes currency;
     private Double balance;
     private String name;
 
 
-    public BankProductsAbst(String currency, Double balance, String name) {
+    public BankProductsAbst(CurrencyTypes currency, Double balance, String name) {
         this.currency = currency;
         this.balance = balance;
         this.name = name;
@@ -13,19 +13,14 @@ public abstract class BankProductsAbst implements BankProducts {
 
 
     public void replenish(Double amount){
-        this.balance=getBalanceForAccount()+amount;
+        setBalance(getBalance()+amount);
     }
 
-    //хз надо ли , или только геттер обычный - может сделать стрингом и возвращать красивое сообщение
-    public Double getBalanceForAccount(){
-        return getBalance();
-    }
-
-    public String getCurrency() {
+    public CurrencyTypes getCurrency() {
         return currency;
     }
 
-    public void setCurrency(String currency) {
+    public void setCurrency(CurrencyTypes currency) {
         this.currency = currency;
     }
 
