@@ -1,7 +1,7 @@
 public class Client {
 
     private String fullName;
-    private int id;
+    private static int id = 0;
 
     public String getFullName() {
         return fullName;
@@ -15,19 +15,21 @@ public class Client {
         return id;
     }
 
-    public void setID(int id) {
-        this.id = id;
+
+    public static int setID() {
+        id++;
+        return id;
     }
 
 
     public Client(String fullName, int id) {
         this.fullName = fullName;
-        this.id = id;
+
 
     }
 
-    public String getIdAndName() {
-        return getId() + " " + getFullName();
+    public String getIdClientAndNameProduct(BankProductsAbst bankProductsAbst) {
+        return getId() + " " + bankProductsAbst.getName();
 
     }
 
@@ -41,22 +43,22 @@ public class Client {
 
     public void comesToTheBankFor(BankProductsAbst bankProductsAbst) {
 
-        System.out.println("Здравствуйте! Меня зовут " + fullName + " я хочу оформить " + bankProductsAbst.getClass().getSimpleName());
+        System.out.println("Здравствуйте! Меня зовут " + fullName + " я хочу оформить " + bankProductsAbst.getName());
     }
 
     public void checksBalance(BankProductsAbst bankProductsAbst) {
 
-        System.out.println("Ваш балланс :" + bankProductsAbst.getBalance() + " " + bankProductsAbst.getCurrency());
+        System.out.println("Ваш балланс: " + bankProductsAbst.getBalance() + " " + bankProductsAbst.getCurrency());
     }
 
     public void replenishBalance(BankProductsAbst bankProductsAbst, Double amount) {
         bankProductsAbst.replenish(amount);
-        System.out.println("Вы зачислили " + amount + " " + bankProductsAbst.getCurrency());
+        System.out.println("Вы зачислили: " + amount + " " + bankProductsAbst.getCurrency());
     }
 
     public void writeOffMoneyFromAccount(Cards card, Double amount, BankProductsAbst bankProductsAbst) {
         card.writeOff(amount, bankProductsAbst);
-        System.out.println("Вы списали со счета : " + amount + bankProductsAbst.getCurrency());
+        System.out.println("Вы списали со счета: " + amount + bankProductsAbst.getCurrency());
 
     }
 

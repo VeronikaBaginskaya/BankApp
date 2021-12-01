@@ -1,4 +1,5 @@
 import java.math.BigInteger;
+import java.util.Map;
 
 public class InvestmentsImpl extends BankProductsAbst implements Investments {
 
@@ -7,17 +8,17 @@ public class InvestmentsImpl extends BankProductsAbst implements Investments {
     }
 
     public void closing(int id) {
-        DataBase dataBase = new DataBase();
-        BankProductsAbst investment = dataBase.clientsProducts.get(id);
-        if (investment instanceof Investments) {
-            try {
-                dataBase.clientsProducts.remove(id);
-            }
-            catch(Exception e){
-                System.out.println("Такого клиента не существует в БД");
+        BankProductsAbst investment = DataBase.clientsProducts.get(id);
+        Map<String, BankProductsAbst> map = DataBase.clientsProducts;
+        for (Map.Entry<String, BankProductsAbst> entry : map.entrySet()) {
+            if (entry.getValue() instanceof Investments) {
+                try {
+                    DataBase.clientsProducts.remove(entry.getKey());
+                } catch (Exception e) {
+                    System.out.println("Такого клиента не существует в БД");
+                }
             }
         }
     }
-
 }
 
