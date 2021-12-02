@@ -23,9 +23,13 @@ public class Client {
     }
 
 
-    public static int setID() {
+    public static int getIncrementedId() {
         id++;
         return id;
+    }
+
+    public static void setId(int id) {
+        Client.id = id;
     }
 
 
@@ -48,35 +52,35 @@ public class Client {
 //    }
 
 
-    public void comesToTheBankFor(BankProductsAbst bankProductsAbst) {
+    public String comesToTheBankFor(BankProductsAbst bankProductsAbst) {
 
-        System.out.println("Здравствуйте! Меня зовут " + fullName + " я хочу оформить " + bankProductsAbst.getName());
+        return ("Здравствуйте! Меня зовут " + fullName + " я хочу оформить " + bankProductsAbst.getName().getProductName());
     }
 
-    public void checksBalance(BankProductsAbst bankProductsAbst) {
+    public String checksBalance(BankProductsAbst bankProductsAbst) {
 
-        System.out.println("Ваш балланс: " + bankProductsAbst.getBalance() + " " + bankProductsAbst.getCurrency());
+        return ("Ваш балланс: " + bankProductsAbst.getBalance() + " " + bankProductsAbst.getCurrency());
     }
 
-    public void replenishBalance(BankProductsAbst bankProductsAbst, Double amount) {
+    public String replenishBalance(BankProductsAbst bankProductsAbst, Double amount) {
         bankProductsAbst.replenish(amount);
-        System.out.println("Вы зачислили: " + amount + " " + bankProductsAbst.getCurrency());
+        return ("Вы зачислили: " + amount + " " + bankProductsAbst.getCurrency());
     }
 
-    public void writeOffMoneyFromAccount(Cards card, Double amount, BankProductsAbst bankProductsAbst) {
+    public String writeOffMoneyFromAccount(Cards card, Double amount, BankProductsAbst bankProductsAbst) {
         card.writeOff(amount, bankProductsAbst);
-        System.out.println("Вы списали со счета: " + amount + bankProductsAbst.getCurrency());
+        return ("Вы списали со счета: " + amount + bankProductsAbst.getCurrency());
 
     }
 
-    public void closeInvestment(Investments investment) {
+    public String closeInvestment(Investments investment) {
         investment.closing();
-        System.out.println("Ваш  вклад был закрыт");
+        return("Ваш  вклад был закрыт");
 
     }
 
-    public void getsIndebtedness(CreditCard creditCard) {
-        System.out.println("Ваш остаток по задолженности кредитной карты: " + creditCard.getIndebtedness());
+    public String getsIndebtedness(CreditCard creditCard) {
+        return "Ваш остаток по задолженности кредитной карты: " + creditCard.getIndebtedness();
     }
 
 

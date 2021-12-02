@@ -2,6 +2,7 @@ package BankProducts;
 
 import BankProductsModel.BankProductsAbst;
 import enums.CurrencyTypes;
+import enums.ProductName;
 
 public class CreditCardImpl extends BankProductsAbst implements CreditCard {
 
@@ -9,7 +10,7 @@ public class CreditCardImpl extends BankProductsAbst implements CreditCard {
     private Double indebtedness;
 
 
-    public CreditCardImpl(CurrencyTypes currency, Double balance, String name, Double interestRate, Double indebtedness) {
+    public CreditCardImpl(CurrencyTypes currency, Double balance, ProductName name, Double interestRate, Double indebtedness) {
         super(currency, balance, name);
         this.interestRate = interestRate;
         this.indebtedness = indebtedness;

@@ -3,12 +3,13 @@ package BankProducts;
 import BankProductsModel.BankProductsAbst;
 import DataBase.DataBase;
 import enums.CurrencyTypes;
+import enums.ProductName;
 
 import java.util.Map;
 
 public class InvestmentsImpl extends BankProductsAbst implements Investments {
 
-    public InvestmentsImpl(CurrencyTypes currency, Double balance, String name) {
+    public InvestmentsImpl(CurrencyTypes currency, Double balance, ProductName name) {
         super(currency, balance, name);
     }
 

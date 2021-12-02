@@ -1,14 +1,16 @@
 package BankProductsModel;
 
 import enums.CurrencyTypes;
+import enums.ProductName;
+
 public abstract class BankProductsAbst implements BankProducts {
 
     private CurrencyTypes currency;
     private Double balance;
-    private String name;
+    private ProductName name;
 
 
-    public BankProductsAbst(CurrencyTypes currency, Double balance, String name) {
+    public BankProductsAbst(CurrencyTypes currency, Double balance, ProductName name) {
         this.currency = currency;
         this.balance = balance;
         this.name = name;
@@ -35,12 +37,12 @@ public abstract class BankProductsAbst implements BankProducts {
         this.balance = balance;
     }
 
-    public String getName() {
+    public ProductName getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = ProductName.valueOf(name);
     }
 
 

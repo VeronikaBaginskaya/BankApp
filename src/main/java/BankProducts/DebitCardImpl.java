@@ -2,10 +2,11 @@ package BankProducts;
 
 import BankProductsModel.BankProductsAbst;
 import enums.CurrencyTypes;
+import enums.ProductName;
 
 public class DebitCardImpl extends BankProductsAbst implements Cards {
 
-    public DebitCardImpl(CurrencyTypes currency, Double balance, String name) {
+    public DebitCardImpl(CurrencyTypes currency, Double balance, ProductName name) {
         super(currency, balance, name);
     }
 
