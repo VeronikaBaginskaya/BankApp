@@ -38,7 +38,7 @@ public class MainClass {
         client1.checksBalance(investment);
         System.out.println("Проверяем записи в бд - " + DataBase.getFromDataBase(client1.getIdClientAndNameProduct(investment)));
         System.out.println("Закрываем вклад");
-        client1.closeInvestment((InvestmentsImpl) investment, client1.getId());
+        client1.closeInvestment((InvestmentsImpl) investment);
         System.out.println("Проверяем удалилась ли запись из бд - запись " + DataBase.getFromDataBase(client1.getIdClientAndNameProduct(investment)));
 
         System.out.println("");

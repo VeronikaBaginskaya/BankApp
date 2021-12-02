@@ -69,8 +69,8 @@ public class Client {
 
     }
 
-    public void closeInvestment(Investments investment, int idClient) {
-        investment.closing(idClient);
+    public void closeInvestment(Investments investment) {
+        investment.closing();
         System.out.println("Ваш  вклад был закрыт");
 
     }

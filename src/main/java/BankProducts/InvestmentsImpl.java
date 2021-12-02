@@ -12,8 +12,7 @@ public class InvestmentsImpl extends BankProductsAbst implements Investments {
         super(currency, balance, name);
     }
 
-    public void closing(int id) {
-        BankProductsAbst investment = DataBase.clientsProducts.get(id);
+    public void closing() {
         Map<String, BankProductsAbst> map = DataBase.clientsProducts;
         for (Map.Entry<String, BankProductsAbst> entry : map.entrySet()) {
             if (entry.getValue() instanceof Investments) {
